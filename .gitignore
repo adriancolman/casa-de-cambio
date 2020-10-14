@@ -45,6 +45,7 @@ cypress/integration/examples
 cypress/plugins
 cypress/support
 
+
 # TypeScript v1 declaration files
 typings/
 
