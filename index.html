@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>exchange rates</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="nav-header">
+        <div class="logo"><a href="#">exchange rates</a> </div>
+        <div class="links-nav">
+            <ul class="list-nav-links">
+                <li class="item-link"> <a href="#">home </a> </li>
+                <li class="item-link"> <a href="#">login</a> </li>
+
+            </ul>
+            <div class="menu-navbar"> <a href="#">menu</a></div>
+
+        </div>
+        <span class="menu-icon" id="menu-icon">
+            <i class="fas fa-align-justify"></i>
+        </span>
+        <span class="oculto" id="arrow-icon">
+            <i class="fas fa-arrow-circle-up"></i>
+        </span>
+    </nav>
+    <header>
+
+        <h1 class="title"> <u> exchange rates</u> </h1>
+
+    </header>
+    <main>
+        <div class="exchange-content">
+
+            <div class="selection-area">
+
+                <div class="base-selection">
+                    <h3 class="base-selection-title">
+                        Choose your base currency
+                    </h3>
+                    <div class="select-base-container">
+                        <select name="base-selector" id="base-select">
+
+                        </select>
+
+
+                    </div>
+                </div>
+
+                <div class="date-selection">
+                    <h3 class="date-selection-title">
+                        Consultation date
+                    </h3>
+                    <div class="select-date-container">
+                        <input type="date" id="date-selection" name="consultation-date" value="" min="2000-01-01"
+                            max="">
+                    </div>
+                    <div class="error-date oculto">Please choose a valid date
+                        <button class="close-error-date">x</button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="button-base"><span>Ok go</span></button>
+
+            <h2 class="sub-title oculto"> </h2>
+
+            <table class="table-exchange oculto">
+                <tbody id="table-exchange">
+                    <tr>
+                        <th>base</th>
+                        <th>rate</th>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="navbar-foot">
+            <nav>
+                <ul class="nav-foot-list">
+                    <li class="item-nav-foot"><a href="#"> Terms of service </a></li>
+                    <li class="item-nav-foot"><a href="#">Privacy</a> </li>
+                    <li class="item-nav-foot"><a href="#">Feedback</a> </li>
+                    <li class="item-nav-foot"><a href="#">FAQ</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src='main.js'></script>
+
+</body>
+
+</html>

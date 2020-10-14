@@ -1,0 +1,14 @@
+//el usuario debe elegir la base, la fecha y la tabla muestra los cambios;
+//testearlo con cypress
+
+//si tuviese que hacer esto mismo con ajax sería asi
+
+/*$.ajax({//asynchronous json and xml
+    method: "GET",
+    url: "https://api.exchangesratesapi.io/latest",
+    success: respuesta =>{
+        console.log("respuesta de exchangesrataesapi.io", respuesta);
+        $(".sub-title").append(`<h1>${JSON.stringify(respuesta) }</h1>`);
+    }
+
+});*/
