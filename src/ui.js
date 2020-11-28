@@ -8,16 +8,16 @@ $menuIcon.onclick = expandMenu;
 $arrowIcon.onclick = shrinkMenu;
 
 
-export function setTodayToInputDate(){
+export function setTodayToInputDate() {
     const fecha = new Date();
-    const hoy = `${fecha.getFullYear()}-${fecha.getMonth()+1}-${fecha.getDate()}`
+    const hoy = `${fecha.getFullYear()}-${fecha.getMonth() + 1}-${fecha.getDate()}`
     $inputDate.setAttribute("max", hoy);
 }
 
 
 
 export function createSubTitleAndTable(exchanges) {
-    
+
     $('.sub-title').append(`check the rates in ${exchanges.base} base at <time id="time">${exchanges.date}</time>`);
     Object.keys(exchanges.rates).forEach(currency => {
 
@@ -32,44 +32,44 @@ export function fillSelectElement(latestExchanges) {
         $select.appendChild($option);
     })
     const $optionEur = document.createElement("option");
-    $optionEur.textContent= "EUR";
+    $optionEur.textContent = "EUR";
     $select.appendChild($optionEur);
 }
 
 export function getBase(getUserSelection) {
-    
+
 
     const selectedDate = $inputDate.value;
-    
+
     if (validateDateInput(selectedDate) === "empty") {
         return;
     }
     else {
 
-            const $selectedIndex = $select.selectedIndex;
-            const $option = $select.options;
-            const base = $option[$selectedIndex].textContent;
-            
-                
-                    showTable();
-                    
-                    getUserSelection(base, selectedDate)
-                        .then(response => {
-                            cleanSubtitleAndTable();
-                            
-                            createSubTitleAndTable(response)
+        const $selectedIndex = $select.selectedIndex;
+        const $option = $select.options;
+        const base = $option[$selectedIndex].textContent;
 
-                        })
-                
-        }
+        cleanSubtitleAndTable();
+        showTable();
+
+        getUserSelection(base, selectedDate)
+            .then(response => {
 
 
+                createSubTitleAndTable(response)
+
+            })
 
     }
 
 
+
+}
+
+
 function validateDateInput(date) {
-    
+
     if (date === "") {
         $divErrorDate.classList.remove("oculto");
         $inputDate.setAttribute("disabled", true);
@@ -78,7 +78,7 @@ function validateDateInput(date) {
 }
 
 function showTable() {
-    
+
     const $table = document.querySelector(".table-exchange");
     const $subTitle = document.querySelector(".sub-title");
     $table.classList.remove("oculto");
@@ -87,8 +87,10 @@ function showTable() {
 
 function cleanSubtitleAndTable() {
     $(".sub-title").text("");
-    const $rowsTable = document.querySelectorAll(".currencyTableRow");
-    $rowsTable.forEach(removeTableRows);
+    const $rowsTable = document.querySelectorAll(".currency-table-row");
+    $rowsTable.forEach((tr) => {
+        removeTableRows(tr)
+    });
 }
 
 function removeTableRows(tr) {
